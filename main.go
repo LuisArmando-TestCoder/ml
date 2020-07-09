@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/LuisArmando-TestCoder/ml/utils"
+	"github.com/LuisArmando-TestCoder/ml/models"
 )
 
 func main() {
-	records := utils.GetCSVRecords("./data/housePrices.csv")
-	fmt.Println(records["Home"][0])
-	fmt.Println(records["Price"][0])
+	var linearRegression models.LinearType
+	linearRegression.UseCSVDataset("./data/housePrices.csv")
+	linearRegression.TrainModelWithLabels("SqFt", "Price")
+	fmt.Println(linearRegression.Regress(1790))
 }
