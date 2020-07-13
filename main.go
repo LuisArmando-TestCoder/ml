@@ -22,5 +22,6 @@ func main() {
 		{4, 4, 2},
 	}
 	
+	fmt.Println("GetSummedUpMatrix", utils.GetSummedUpMatrix(m1, m2))
 	fmt.Println("GetMultipliedMatrix", utils.GetMultipliedMatrix(m1, m2))
 }

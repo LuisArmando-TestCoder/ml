@@ -57,3 +57,12 @@ func AddFloatingBiasToVector(float float64, vector []float64) []float64 {
 	}
 	return vector
 }
+
+func GetSummedUpMatrix(matrix1, matrix2 [][]float64) [][]float64 {
+	for x := range matrix1 {
+		for y := range matrix1[x] {
+			matrix1[x][y] += matrix2[x][y]
+		}
+	}
+	return matrix1
+}
