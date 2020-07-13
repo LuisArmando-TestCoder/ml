@@ -7,11 +7,20 @@ import (
 )
 
 func main() {
-	records := utils.GetCSVRecords("./data/housePrices.csv")
-	fmt.Println("GetRange", utils.GetRange(records, "Price"))
-	fmt.Println("GetMedian", utils.GetMedian(records, "Price"))
-	fmt.Println("GetMean", utils.GetMean(records, "Price"))
-	fmt.Println("GetMode", utils.GetMode(records, "Price"))
-	fmt.Println("GetLowest", utils.GetLowest(records, "Price"))
-	fmt.Println("GetHighest", utils.GetHighest(records, "Price"))
+	v1 := []float64{2,3,5}
+	v2 := []float64{3,3,6}
+	
+	fmt.Println("GetMultipliedVectors", utils.GetMultipliedVectors(v1, v2))
+	fmt.Println("AddFloatingBiasToVector", utils.AddFloatingBiasToVector(3.0, v1))
+	
+	m1 := [][]float64{
+		{2, 3, 5},
+		{5, 6, 8},
+	}
+	m2 := [][]float64{
+		{5, 5, 6},
+		{4, 4, 2},
+	}
+	
+	fmt.Println("GetMultipliedMatrix", utils.GetMultipliedMatrix(m1, m2))
 }
