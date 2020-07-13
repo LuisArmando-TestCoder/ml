@@ -35,10 +35,11 @@ func GetTransposedMatrix(matrix [][]float64) [][]float64 {
 
 func GetMultipliedMatrix(matrix1, matrix2 [][]float64) [][]float64 {
 	transposedMatrix2 := GetTransposedMatrix(matrix2)
-	matrixSize := len(matrix1)
-	multipliedMatrix := make([][]float64, matrixSize)
+	matrix1RowsAmount := len(matrix1)
+	matrix2ColumnsAmount := len(transposedMatrix2[0])
+	multipliedMatrix := make([][]float64, matrix1RowsAmount)
 	for y := range multipliedMatrix {
-		for i := 0; i < matrixSize; i++ {
+		for i := 0; i < matrix2ColumnsAmount; i++ {
 			multipliedMatrix[y] = append(multipliedMatrix[y], 0)
 		}
 	}
